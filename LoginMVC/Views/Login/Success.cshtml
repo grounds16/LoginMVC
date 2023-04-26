@@ -1,0 +1,15 @@
+﻿@model LoginViewModel
+@using Login.DataAccess.EF.Model;
+
+<div class="text-center">
+    <h1>
+        You have successfully logged in!!!
+    </h1>
+</div>
+
+
+<div class="text-center">
+    <button type="button" class="btn btn-primary" onclick="window.location.href ='/Home/Index';">Home</button>
+    <button type="button" class="btn btn-primary" onclick="window.location.href ='/Login/Index';">Log out</button>
+    <button type="button" class="btn btn-primary" onclick="window.location.href ='/Login/AllAccounts';">View All Accounts</button>
+</div>

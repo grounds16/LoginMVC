@@ -1,0 +1,39 @@
+﻿@model LoginViewModel
+<div class="text-center">
+    <hr>
+        <h1>Login</h1>
+    <hr />
+</div>
+
+
+<body>
+    <div class="text-center">
+        <form asp-action="Login" asp-controller="Login" method="post">
+            <div class="mb-3 text-center">
+                    <label asp-for="UserName">Username</label>
+                    <input asp-for="UserName" class="form-control text-center" required/>
+            </div>
+
+            <div class="mb-3 text-center">
+                    <label asp-for="Password">Password</label>
+                    <input asp-for="Password" class="form-control text-center" required/>
+            </div>
+
+            <div>
+                <button type="submit" value="Login" class="btn btn-primary">Login</button>
+            </div>
+        </form>
+        @if (Model.ActionMessage != null)
+        {
+                  <script type="text/javascript">
+                          window.onload = function () {
+                             alert("@Model.ActionMessage");
+                          };
+                  </script>
+        }
+        <div class="text-center">
+            If you wish to sign up please select <a href="~/Create/Index">here</a>.
+        </div>
+
+    </div>
+</body>

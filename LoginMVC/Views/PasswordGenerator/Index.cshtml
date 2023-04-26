@@ -1,0 +1,47 @@
+﻿@model PasswordGeneratorViewModel
+<div class="text-center">
+    <p id="PasswordTitle">
+        <h1>
+            Password Generated
+        </h1>
+    </p>
+</div>
+
+<div class="mb-3 form-group input-group-lg input-group">
+    <input class="form-control copy_text" type="text" name="PasswordGenerated" value="@Model.PasswordGenerated" id="Password">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="Copy()">Copy</button>
+    <script>
+        var copyText = document.querySelector('.copy_text')
+        function Copy()
+        {
+         copyText.select();
+         document.execCommand("copy");
+         alert("Password has been copied");
+         console.log(copyText);
+        }
+    </script>
+
+</div>
+
+
+<div class="text-center">
+    <form method="post" action="~/PasswordGenerator/GenerateResult">
+        <div class="text-center">
+            <label for="PasswordLength" class="form-label">Password Length:</label>
+            <input type="number" class="col-1 is-invalid" name="PasswordLength" placeholder="0" id="Password" required>
+        </div>
+        <div class="mb-3">
+            <input asp-for="UpperCase">
+            <label for="UpperCase" class="form-label">Upper Case</label>
+            <input asp-for="SpecialCharcters">
+            <label for="SpecialCharcters" class="form-label">Special Charcters</label>
+        </div>
+        <div>
+            <button class="btn btn-primary" type="submit">Generated</button>
+        </div>
+    </form>
+
+</div>
+<div class="text-center">
+    If you wish to sign up please select <a href="~/Create/Index">here</a>.
+</div>
